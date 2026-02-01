@@ -223,6 +223,7 @@ class TokenGRUTrainer:
         print("[Save] Token-Level Model Saved.")
 
 if __name__ == "__main__":
+    print("🚀 Starting Main Training Block...")
     trainer = TokenGRUTrainer(vocab_limit=5000)
     # Point to the new plain text file we just created
-    trainer.train("data/training_data.txt", iterations=100) # Only 100 for local test (Speed)
+    trainer.train("data/training_data.txt", iterations=3000)

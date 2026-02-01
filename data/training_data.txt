@@ -1,0 +1,62 @@
+Artificial intelligence (AI) is intelligence demonstrated by machines, as opposed to the natural intelligence displayed by humans or animals.
+Leading AI textbooks define the field as the study of "intelligent agents": any device that perceives its environment and takes actions that maximize its chance of successfully achieving its goals.
+Colloquially, the term "artificial intelligence" is often used to describe machines (or computers) that mimic "cognitive" functions that humans associate with the human mind, such as "learning" and "problem solving".
+As machines become increasingly capable, tasks considered to require "intelligence" are often removed from the definition of AI, a phenomenon known as the AI effect.
+A quip in Tesler's Theorem says "AI is whatever hasn't been done yet."
+For instance, optical character recognition is frequently excluded from things considered to be AI, having become a routine technology.
+Modern machine learning capabilities generally include successful understanding of human speech, competing at the highest level in strategic game systems (such as chess and Go), autonomously operating cars, intelligent routing in content delivery networks, and military simulations.
+Deep learning is part of a broader family of machine learning methods based on artificial neural networks with representation learning.
+Learning can be supervised, semi-supervised or unsupervised.
+Deep learning architectures such as deep neural networks, deep belief networks, recurrent neural networks and convolutional neural networks have been applied to fields including computer vision, speech recognition, natural language processing, audio recognition, social network filtering, machine translation, bioinformatics, drug design, medical image analysis, material inspection and board game programs, where they have produced results comparable to and in some cases surpassing human expert performance.
+
+Theory of Relativity: Mass and energy are interchangeable as described by E=mc^2.
+Quantum Entanglement: A phenomenon where particles interact such that the state of one cannot be described independently of the other.
+Mitochondria: The powerhouse of the cell, generating adenosine triphosphate (ATP).
+DNA Replication: The biological process of producing two identical replicas of DNA from one original molecule.
+Photosynthesis: The process used by plants to convert light energy into chemical energy.
+Newton's First Law: An object will remain at rest or in uniform motion unless acted upon by a force.
+The Speed of Light: Approximately 299,792 kilometers per second in a vacuum.
+Black Holes: Regions of spacetime exhibiting gravitational acceleration so strong that nothing can escape.
+Natural Selection: The differential survival and reproduction of individuals due to differences in phenotype.
+Chemical Bonding: The attraction between atoms that allows the formation of chemical substances.
+Thermodynamics: The branch of physics that deals with heat and temperature, and their relation to energy and work.
+Plate Tectonics: The scientific theory describing the large-scale motion of seven large plates and the movements of a larger number of smaller plates of the Earth's lithosphere.
+Big Bang Theory: The leading explanation for how the universe began 13.8 billion years ago.
+Hubble Space Telescope: A space telescope that was launched into low Earth orbit in 1990 and remains in operation.
+Mars Rover: A motor vehicle that travels across the surface of the planet Mars upon arrival.
+Artificial Neural Networks: Computing systems inspired by the biological neural networks that constitute animal brains.
+Machine Learning: A subset of artificial intelligence that involves training algorithms to learn patterns from data.
+Deep Learning: A type of machine learning based on artificial neural networks with multiple layers.
+Convolutional Neural Networks (CNNs): A class of deep neural networks, most commonly applied to analyzing visual imagery.
+Recurrent Neural Networks (RNNs): A class of artificial neural networks where connections between nodes form a directed graph along a temporal sequence.
+Natural Language Processing (NLP): A subfield of computer science, information engineering, and artificial intelligence concerned with the interactions between computers and human (natural) languages.
+Computer Vision: An interdisciplinary scientific field that deals with how computers can be made to gain high-level understanding from digital images or videos.
+Reinforcement Learning: An area of machine learning concerned with how software agents ought to take actions in an environment in order to maximize the notion of cumulative reward.
+Supervised Learning: The machine learning task of learning a function that maps an input to an output based on example input-output pairs.
+Unsupervised Learning: A type of machine learning algorithm used to draw inferences from datasets consisting of input data without labeled responses.
+Transfer Learning: A research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
+Generative Adversarial Networks (GANs): A class of machine learning frameworks designed by Ian Goodfellow and his colleagues in 2014.
+Transformer Models: A deep learning model that adopts the mechanism of self-attention, differentially weighting the significance of each part of the input data.
+Large Language Models (LLMs): AI models trained on vast amounts of text data to generate human-like text.
+Ethics in AI: The study of the moral implications of artificial intelligence technologies.
+The Turing Test: A test of a machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human.
+Singularity: A hypothetical future point in time at which technological growth becomes uncontrollable and irreversible, resulting in unfathomable changes to human civilization.
+Robotics: An interdisciplinary branch of engineering and science that includes mechanical engineering, electronic engineering, information engineering, computer science, and others.
+IoT (Internet of Things): The network of physical objects (things) that are embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the internet.
+Cloud Computing: The on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user.
+Cybersecurity: The practice of protecting systems, networks, and programs from digital attacks.
+Blockchain: A growing list of records, called blocks, that are linked using cryptography.
+Cryptocurrency: A digital or virtual currency that is secured by cryptography, which makes it nearly impossible to counterfeit or double-spend.
+Virtual Reality (VR): A simulated experience that can be similar to or completely different from the real world.
+Augmented Reality (AR): An interactive experience of a real-world environment where the objects that reside in the real world are enhanced by computer-generated perceptual information.
+5G Technology: The fifth generation technology standard for broadband cellular networks.
+Nanotechnology: Manipulation of matter on an atomic, molecular, and supramolecular scale.
+Biotechnology: The use of living systems and organisms to develop or make products.
+Genetic Engineering: The direct manipulation of an organism's genes using biotechnology.
+CRISPR: A family of DNA sequences found in the genomes of prokaryotic organisms such as bacteria and archaea.
+Climate Change: A change in the statistical distribution of weather patterns when that change lasts for an extended period of time.
+Renewable Energy: Energy that is collected from renewable resources, which are naturally replenished on a human timescale, such as sunlight, wind, rain, tides, waves, and geothermal heat.
+Sustainable Development: Economic development that is conducted without depletion of natural resources.
+SpaceX: An American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California.
+Tesla: An American electric vehicle and clean energy company based in Palo Alto, California.
+google colab: a product from Google Research, allows anybody to write and execute arbitrary python code through the browser, and is especially well suited to machine learning, data analysis and education.

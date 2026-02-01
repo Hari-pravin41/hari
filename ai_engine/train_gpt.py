@@ -9,7 +9,7 @@ from tokenizer import SimpleTokenizer
 # --- CONFIG ---
 BATCH_SIZE = 32
 BLOCK_SIZE = 64
-MAX_ITERS = 1000
+MAX_ITERS = 5000
 EVAL_INTERVAL = 300
 LEARNING_RATE = 3e-4
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     print(f"🚀 Training GPT from Scratch on {DEVICE}...")
     
     # Init Tokenizer
-    tokenizer = SimpleTokenizer()
+    tokenizer = SimpleTokenizer(vocab_size=10000)
     dataset_path = "data/universal.txt"
     if not os.path.exists(dataset_path):
         # Fallback if running from root

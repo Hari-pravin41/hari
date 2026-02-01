@@ -9,7 +9,7 @@ from tokenizer import SimpleTokenizer
 # --- CONFIG ---
 BATCH_SIZE = 32
 BLOCK_SIZE = 64
-MAX_ITERS = 3000
+MAX_ITERS = 1000
 EVAL_INTERVAL = 300
 LEARNING_RATE = 3e-4
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'

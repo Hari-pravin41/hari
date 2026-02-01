@@ -38,8 +38,27 @@ def analyze():
     
     if ai_brain:
         try: 
-            # Temperature 0.7 for creativity
-            res = ai_brain.generate(msg, temperature=0.7)
+            # PROMPT ENGINEERING
+            # We force the AI into a "User vs AI" dialogue mode
+            prompt = f"User: {msg}\nAI:"
+            
+            # Generate (Limit to 100 tokens to stop rambling)
+            raw_res = ai_brain.generate(prompt, max_tokens=100, temperature=0.6)
+            
+            # CLEANUP
+            # The AI might output "AI: Hello User: Hi". We want only "Hello".
+            # 1. Remove the prompt itself if echoed
+            res = raw_res.replace(prompt, "").strip()
+            
+            # 2. Stop at the next "User:" or "Q:" (Hallucination Cutoff)
+            stop_markers = ["User:", "Q:", "AI:", "\n\n"]
+            for marker in stop_markers:
+                if marker in res:
+                    res = res.split(marker)[0]
+            
+            # 3. Fallback if empty
+            if not res: res = "I am thinking..."
+            
         except Exception as e: 
             res = f"Error: {e}"
     else: 

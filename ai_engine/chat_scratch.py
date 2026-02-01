@@ -2,7 +2,10 @@ import numpy as np
 import sys
 import os
 import time
-from tokenizer import SimpleTokenizer
+try:
+    from ai_engine.tokenizer import SimpleTokenizer
+except ImportError:
+    from tokenizer import SimpleTokenizer
 
 class NumpyChat:
     def __init__(self, model_dir="./models/token_model"):

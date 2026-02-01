@@ -15,13 +15,17 @@ class GPTChat:
         # Load Vocab
         self.tokenizer = SimpleTokenizer()
         self.tokenizer.load(f"{model_dir}/vocab.json")
-        
-        # Load Model
-        self.model = GPT(vocab_size=self.tokenizer.vocab_size)
         weights_path = f"{model_dir}/weights.pth"
         
         # Load Weights (handling CPU/GPU map)
         state_dict = torch.load(weights_path, map_location=self.device)
+        
+        # Detect Vocab Size from weights (crucial for mismatch fix)
+        saved_vocab_size = state_dict['token_embedding_table.weight'].shape[0]
+        print(f"[DEBUG] Saved Vocab: {saved_vocab_size}, Tokenizer Vocab: {self.tokenizer.vocab_size}")
+        
+        # Init Model with CORRECT size
+        self.model = GPT(vocab_size=saved_vocab_size)
         self.model.load_state_dict(state_dict)
         self.model.to(self.device)
         self.model.eval()

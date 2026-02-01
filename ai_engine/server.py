@@ -8,6 +8,7 @@ from pyngrok import ngrok
 from ai_engine.chat_scratch import NumpyChat
 
 app = Flask(__name__)
+ai_brain = None
 
 def run_with_ngrok(token):
     # AUTH
@@ -20,6 +21,7 @@ def run_with_ngrok(token):
     # Load Brain
     try:
         # We assume the model was just trained and saved to models/token_model
+        # Use absolute path relative to repo root if needed, but current dir is repo
         brain = NumpyChat("models/token_model")
         print("✅ Brain Loaded Successfully.")
     except Exception as e:
@@ -30,8 +32,6 @@ def run_with_ngrok(token):
     ai_brain = brain
     
     app.run(port=5000)
-
-ai_brain = None
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
@@ -50,5 +50,4 @@ def analyze():
     return jsonify({"reply": res})
 
 if __name__ == "__main__":
-    # For local testing
     print("Use the Colab Notebook to run this with GPU support.")

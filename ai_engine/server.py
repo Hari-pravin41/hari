@@ -5,7 +5,7 @@ import json
 import re
 from flask import Flask, request, jsonify
 from pyngrok import ngrok
-from ai_engine.chat_scratch import NumpyChat
+from ai_engine.chat_gpt import GPTChat
 
 app = Flask(__name__)
 ai_brain = None
@@ -20,9 +20,7 @@ def run_with_ngrok(token):
     
     # Load Brain
     try:
-        # We assume the model was just trained and saved to models/token_model
-        # Use absolute path relative to repo root if needed, but current dir is repo
-        brain = NumpyChat("models/token_model")
+        brain = GPTChat("models/gpt_model")
         print("✅ Brain Loaded Successfully.")
     except Exception as e:
         print(f"❌ Brain Error: {e}")

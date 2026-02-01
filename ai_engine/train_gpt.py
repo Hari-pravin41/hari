@@ -39,10 +39,10 @@ if __name__ == "__main__":
     
     # Init Tokenizer
     tokenizer = SimpleTokenizer()
-    dataset_path = "data/chat_data_big.txt"
+    dataset_path = "data/universal.txt"
     if not os.path.exists(dataset_path):
         # Fallback if running from root
-        dataset_path = "ai_engine/../data/chat_data_big.txt"
+        dataset_path = "ai_engine/../data/universal.txt"
 
     data = load_data(dataset_path, tokenizer)
     

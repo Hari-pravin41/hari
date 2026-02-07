@@ -39,10 +39,11 @@ if __name__ == "__main__":
     
     # Init Tokenizer
     tokenizer = SimpleTokenizer(vocab_size=10000)
-    dataset_path = "data/universal_v2.txt"
+    # PHASE 2: CHAT TUNING
+    dataset_path = "data/chat_data.txt"
     if not os.path.exists(dataset_path):
         # Fallback if running from root
-        dataset_path = "ai_engine/../data/universal_v2.txt"
+        dataset_path = "ai_engine/../data/chat_data.txt"
 
     data = load_data(dataset_path, tokenizer)
     

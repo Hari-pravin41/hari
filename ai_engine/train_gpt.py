@@ -52,10 +52,21 @@ if __name__ == "__main__":
     model = model.to(DEVICE)
     optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
-    # CHECKPOINTING
+    # CHECKPOINTING (Smart Drive Detection)
+    # Default local path
+    model_dir = "models/gpt_model"
+    
+    # Check for Google Drive (Colab)
+    if os.path.exists("/content/drive/MyDrive"):
+        print("☁️ Google Drive Detected! Saving to persistent storage.")
+        model_dir = "/content/drive/MyDrive/RepairGPT_Models"
+    
+    os.makedirs(model_dir, exist_ok=True)
+    checkpoint_path = f"{model_dir}/checkpoint.pth"
+    weights_path = f"{model_dir}/weights.pth"
+    vocab_path = f"{model_dir}/vocab.json"
+    
     start_iter = 0
-    checkpoint_path = "models/gpt_model/checkpoint.pth"
-    os.makedirs("models/gpt_model", exist_ok=True)
     
     if os.path.exists(checkpoint_path):
         print(f"🔄 Resuming from Checkpoint: {checkpoint_path}")
@@ -89,14 +100,14 @@ if __name__ == "__main__":
                 'loss': loss.item(),
             }, checkpoint_path)
             # Also save final weights for inference
-            torch.save(model.state_dict(), "models/gpt_model/weights.pth")
-            tokenizer.save("models/gpt_model/vocab.json")
+            torch.save(model.state_dict(), weights_path)
+            tokenizer.save(vocab_path)
 
     print("✅ Training Complete.")
     
     # Final Save
-    torch.save(model.state_dict(), "models/gpt_model/weights.pth")
-    tokenizer.save("models/gpt_model/vocab.json")
+    torch.save(model.state_dict(), weights_path)
+    tokenizer.save(vocab_path)
     # Remove checkpoint to start fresh next time (optional, but good for "Clean" release)
     # os.remove(checkpoint_path) 
-    print("💾 Model Saved to models/gpt_model/")
+    print(f"💾 Model Saved to {model_dir}")

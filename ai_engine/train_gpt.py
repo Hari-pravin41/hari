@@ -39,10 +39,10 @@ if __name__ == "__main__":
     
     # Init Tokenizer
     tokenizer = SimpleTokenizer(vocab_size=10000)
-    dataset_path = "data/universal.txt"
+    dataset_path = "data/universal_v2.txt"
     if not os.path.exists(dataset_path):
         # Fallback if running from root
-        dataset_path = "ai_engine/../data/universal.txt"
+        dataset_path = "ai_engine/../data/universal_v2.txt"
 
     data = load_data(dataset_path, tokenizer)
     

@@ -51,8 +51,21 @@ if __name__ == "__main__":
     model = model.to(DEVICE)
     optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
+    # CHECKPOINTING
+    start_iter = 0
+    checkpoint_path = "models/gpt_model/checkpoint.pth"
+    os.makedirs("models/gpt_model", exist_ok=True)
+    
+    if os.path.exists(checkpoint_path):
+        print(f"🔄 Resuming from Checkpoint: {checkpoint_path}")
+        checkpoint = torch.load(checkpoint_path, map_location=DEVICE)
+        model.load_state_dict(checkpoint['model_state_dict'])
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        start_iter = checkpoint['iter']
+        print(f"   -> Resuming at Step {start_iter}")
+
     # Train
-    for iter in range(MAX_ITERS):
+    for iter in range(start_iter, MAX_ITERS):
         # Sample batch
         xb, yb = get_batch(data)
 
@@ -64,11 +77,25 @@ if __name__ == "__main__":
         
         if iter % 100 == 0:
             print(f"step {iter}: loss {loss.item():.4f}")
+            
+        # AUTO-SAVE every 500 steps
+        if iter > 0 and iter % 500 == 0:
+            print(f"💾 Saving Checkpoint at step {iter}...")
+            torch.save({
+                'iter': iter,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': loss.item(),
+            }, checkpoint_path)
+            # Also save final weights for inference
+            torch.save(model.state_dict(), "models/gpt_model/weights.pth")
+            tokenizer.save("models/gpt_model/vocab.json")
 
     print("✅ Training Complete.")
     
-    # Save
-    os.makedirs("models/gpt_model", exist_ok=True)
+    # Final Save
     torch.save(model.state_dict(), "models/gpt_model/weights.pth")
     tokenizer.save("models/gpt_model/vocab.json")
+    # Remove checkpoint to start fresh next time (optional, but good for "Clean" release)
+    # os.remove(checkpoint_path) 
     print("💾 Model Saved to models/gpt_model/")
